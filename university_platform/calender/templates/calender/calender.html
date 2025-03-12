@@ -1,0 +1,49 @@
+{% extends 'temp/coadmin_base.html' %}
+{% block base %}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>calender</title>
+</head>
+<body>
+	<center>
+		<h2>Calender</h2>
+		<form method="post">
+            <table>
+            {% csrf_token %}
+			<tr>
+                <td><h4>name</h4></td>
+                <td><input type="text" name="name">
+
+            </td>
+            </tr>
+                <tr>
+               <td><h4>date</h4></td>
+                   <td> <input type="date" name="date"> </td>
+                </tr>
+            <tr>
+
+                <td>Time</td>
+                    <td><input type="time" name="time"> </td>
+            </tr>
+
+
+              <tr>
+				<td>description</td>
+				<td><input type="text" name="description"> </td>
+              </tr>
+                  <tr>
+				<td>submit</td>
+                      <td><input type="submit" value="submit"> </td></tr>
+
+			</table>
+			
+
+		</form>
+	</center>
+
+</body>
+</html>
+{% endblock %}

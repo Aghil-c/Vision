@@ -1,0 +1,42 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>admin</title>
+</head>
+<body>
+	<center>
+		<h2>Admin</h2>
+        <table border="2">
+        <tr>
+            <th>college name</th>
+        	<th>admin name</th>
+        	<th>E mail</th>
+        	<th>gender</th>
+            <th>photo</th>
+            <th>user name</th>
+            <th>password</th>
+            <th>number</th>
+            <th>Status</th>
+        </tr>
+        {% for i in rr %}
+        <tr>
+            <td>{{ i.admin_college }}</td>
+        	<td>{{ i.admin_id }}</td>
+        	<td>{{ i.admin_email }}</td>
+        <td>{{ i.admin_gender }}</td>
+        <td>{{ i.admin_photo }}</td>
+        <td>{{ i.admin_username }}</td>
+        <td>{{ i.admin_password }}</td>
+        <td>{{ i.number }}</td>
+        <td>{{ i.faculty_status }}</td>
+            <td><a href="/coadmin/accept/{{ i.admin_id }}">ACCEPT</a> </td>
+            <td><a href="/coadmin/delete/{{ i.admin_id }}">DELETE</a> </td>
+        </tr>
+        {% endfor %}
+        </table>
+	</center>
+
+</body>
+</html>

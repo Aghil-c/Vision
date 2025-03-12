@@ -1,0 +1,28 @@
+{% extends 'temp/staff_base.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>notification</title>
+</head>
+<body>
+<center>
+	<h2>notification</h2>
+     <table border="2">
+	   <tr>
+		<th>notification</th>
+
+	   </tr>
+   {% for i in nn %}
+	<tr>
+		<td>{{ i.admin_notification }}</td>
+
+
+
+	</tr>
+	{% endfor %}
+</table>
+</center>
+</body>
+</html>
+{% endblock %}

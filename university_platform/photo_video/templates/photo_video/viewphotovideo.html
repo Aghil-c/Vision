@@ -1,0 +1,33 @@
+{% extends 'temp/coadmin_base.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>photo and video</title>
+</head>
+<body>
+<center>
+	<h2>photo and video</h2>
+     <table border="2">
+	   <tr>
+		<th>title</th>
+		<th>student id</th>
+		<th>photo & video</th>
+		<th>remove</th>
+	   </tr>
+  {% for i in pv %}
+	<tr>
+		<td>{{ i.title }}</td>
+		<td>{{ i.student_id }}</td>
+		<td>{{ i.pv }}</td>
+        <td><a href="/photo_video/delete/{{ i.pv_id}}">DELETE</a> </td>
+		<td></td>
+
+	</tr>
+         {% endfor %}
+	
+</table>
+</center>
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>activity response</title>
+</head>
+<body>
+<center>
+	<h2>activty response</h2>
+     <table border="2" class="table table-bordered table-striped">
+	   <tr>
+		<th>activity name</th>
+		<th>student id</th>
+
+		
+		
+	   </tr>
+{% for i in bbbbb %}
+         <tr>
+		<td>{{ i.activities_name }}</td>
+		<td>{{ i.student_id }}</td>
+
+		
+	</tr>
+         {% endfor %}
+	
+</table>
+</center>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>view course</title>
+</head>
+<body>
+<center>
+	<h1>view course</h1>
+<table border="2">
+
+	<tr>
+		<th>course</th>
+		<th>duration</th>
+	</tr>
+   {% for i in cc %}
+	<tr>
+		<td>{{ i.course }}</td>
+		<td>{{ i.course_duration }}</td>
+	</tr>
+    {% endfor %}
+
+    </table>
+</center>
+</body>
+</html>

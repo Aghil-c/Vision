@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>view study meterial</title>
+</head>
+<body>
+<center>
+	<h2> Student study meterial</h2>
+     <table border="2">
+	   <tr>
+		<th>study meterial name</th>
+		<th>stydy meterial</th>
+		<th>faculty name</th>
+
+	   </tr>
+  {% for i in sss %}
+	<tr>
+		<td>{{i.study_materialdes }}</td>
+		<td>{{ i.study_material }}</td>
+		<td>{{ i.faculty_id }}</td>
+
+
+	</tr>
+	{% endfor %}
+</table>
+</center>
+</body>
+</html>

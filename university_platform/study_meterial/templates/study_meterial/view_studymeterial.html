@@ -1,0 +1,33 @@
+
+{% extends 'temp/staff_base.html' %}
+{% block base %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>view study meterial</title>
+</head>
+<body>
+<center>
+	<h2>study meterial</h2>
+     <table border="2">
+	   <tr>
+		<th>study meterial name</th>
+		<th>stydy meterial</th>
+		<th>faculty name</th>
+
+	   </tr>
+  {% for i in ss %}
+	<tr>
+		<td>{{i.study_materialdes }}</td>
+		<td>{{ i.study_material }}</td>
+		<td>{{ i.faculty_id }}</td>
+        <td><a href="/study_meterial/delete/{{ i.study_id }}">DELETE</a> </td>
+
+	</tr>
+	{% endfor %}
+</table>
+</center>
+</body>
+</html>
+{% endblock %}

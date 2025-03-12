@@ -1,0 +1,29 @@
+{% extends 'temp/home_base.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<center>
+	<h2>login</h2>
+	<form method="post">
+		<table>
+			<tr>
+				<td>username</td>
+				<td><input type="text" name="un" class="form-control" required></td>
+			</tr>
+			<tr>
+				<td>password</td>
+				<td><input type="password" name="ps" class="form-control" required></td>
+			</tr>
+			<tr>
+				<td><input type="submit" value="login"></td>
+			</tr>
+		</table>
+	</form>
+</center>
+</body>
+</html>
+{% endblock %}

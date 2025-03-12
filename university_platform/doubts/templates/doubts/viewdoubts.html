@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>doubts</title>
+</head>
+<body>
+<center>
+	<h2>Doubts</h2>
+     <table border="2">
+
+	   <tr>
+		<th>doubts</th>
+		<th>student id</th>
+		<th>date </th>
+		<td>time</td>
+		<th>replay</th>
+	   </tr>
+      {% for i in dd %}
+	<tr>
+		<td>{{ i.doubt }}</td>
+		<td>{{ i.student_id }}</td>
+		<td>{{ i.doubt_date }}</td>
+		<td>{{ i.doubt_time }}</td>
+        <td>{{ i.doubt_replayl }}</td>
+       <td><a href="/doubts/post_doubtreplay/{{ i.doubt_id }}">reply</a> </td>
+ 	</tr>
+
+		
+	</tr>
+	{% endfor %}
+</table>
+</center>
+</body>
+</html>

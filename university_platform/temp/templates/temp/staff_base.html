@@ -1,0 +1,77 @@
+<html lang="en">
+
+<head>
+
+
+
+    <!-- <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <title>Dark Blue Page with White Text</title>
+
+    <!-- <link rel="stylesheet" href="q.css"> -->
+  <style type="text/css">
+        body {
+    background-color: white;
+    color: darkblue;
+    height: 100vh;
+    display: flex;
+/*    align-items: center;*/
+    justify-content: center;
+    margin: 0;
+}
+
+
+#all{
+
+    background-color:white ;
+     text-align: center;
+     border-radius: 20px;
+     padding: 20px;
+     width: 50%;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+td{
+    text-decoration-color:white ;
+}
+
+.navbar {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            display: flex;
+            gap: 15px;
+            background: lightgreen;
+            padding: 10px 20px;
+            border-radius: 8px;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 12px;
+            transition: 0.3s;
+        }
+
+        .navbar a:hover {
+            background: whitesmoke;
+            border-radius: 4px;
+        }
+
+    </style>
+</head>
+
+<body>
+ <div class="navbar">
+        <a href="/temp/post_staff/">BACK</a>
+
+    </div>
+
+</div>
+    <div class="all">
+
+         {% block base %}
+        {% endblock %}
+    </div>
+</body>
+</html>

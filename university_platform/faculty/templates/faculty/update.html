@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>update</title>
+</head>
+<body>
+<center>
+	<h3>Update</h3>
+		<form method="post">
+			<table>
+				<tr>
+					<td><h4>Name</h4></td>
+					<td><input type="text" name="Name" value="{{ f.faculty_id }}"></td>
+                </tr>
+                <tr>
+					<td><h4>Phone number</h4></td>
+					<td><input type="text " name="number" value="{{ f.faculty_phonel }}"></td>
+                </tr>
+                <tr>
+					<td>
+						<h4>Gender </h4>
+					</td>
+					<td><input type="radio" name="gender">Male
+					    <input type="radio" name="gender">Female
+					    <input type="radio" name="gender">Other
+					</td>
+					 </tr>
+					 <tr>
+					<td><h4>Email</h4></td>
+					<td><input type="Email " name="Email"value="{{ f.faculty_email }}"></td>
+                    </tr>
+                    <tr>
+					<td><h4>Photo</h4></td>
+					<td><input type="file" name="Photo" value="{{ f.faculty_photo }}"></td>
+                    </tr>
+                    <tr>
+					<td><h4>User name</h4></td>
+					<td><input type="text " name="User" value="{{ f.faculty_username }}"></td>
+                    </tr>
+                    <tr>
+					<td><h4>Password</h4></td>
+					<td><input type="Password " name="Password"value="{{ f.faculty_password }}"></td>
+                    </tr>
+
+               
+                <tr>
+				<td><input type="submit" value="submit"></td>
+			</tr>
+			</table>
+		</form>
+
+</center>
+</body>
+</html>

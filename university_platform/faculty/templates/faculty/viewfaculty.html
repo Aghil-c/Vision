@@ -1,0 +1,47 @@
+{% extends 'temp/coadmin_base.html' %}
+{% block base %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>faculty</title>
+</head>
+<body>
+	<center>
+		<h2>Faculty</h2>
+        <table border="2">
+        <tr>
+        	<th>faculty name</th>
+        	<th>E mail</th>
+        	<th>gender</th>
+            <th>photo</th>
+            <th>user name</th>
+            <th>password</th>
+            <th>number</th>
+            <th>status</th>
+            <th>Co admin</th>
+
+        </tr>
+        {% for i in ff %}
+        <tr>
+        	<td>{{ i.faculty_id }}</td>
+        	<td>{{ i.faculty_email }}</td>
+        <td>{{ i.faculty_gender }}</td>
+        <td>{{ i.faculty_photo }}</td>
+        <td>{{ i.faculty_username }}</td>
+        <td>{{ i.faculty_password }}</td>
+        <td>{{ i.faculty_phonel }}</td>
+            <td>{{ i.faculty_status }}</td>
+            <td>{{ i.admin_id }}</td>
+
+            <td><a href="/faculty/accept/{{ i.faculty_id }}">ACCEPT</a> </td>
+            <td><a href="/faculty/delete/{{ i.faculty_id }}">DELETE</a> </td>
+
+        </tr>
+        {% endfor %}
+        </table>
+	</center>
+
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends 'temp/staff_base.html' %}
+{% block base %}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<center>
+	<h2>activity</h2>
+     <table border="2">
+	   <tr>
+		<th>activity name</th>
+		<th>faculty id</th>
+
+	   </tr>
+         {% for i in aaaaaaa %}
+	<tr>
+		<td>{{ i.activities_name }}</td>
+		<td>{{ i.faculty_id }}</td>
+        <td><a href="/activites/delete/{{ i.activities_id}}">DELETE</a> </td>
+
+	</tr>
+         {% endfor %}
+</table>
+</center>
+</body>
+</html>
+{% endblock %}
