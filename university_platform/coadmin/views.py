@@ -14,12 +14,6 @@ def adminn(request):
         obj.admin_password=request.POST.get('Password')
         obj.admin_username=request.POST.get('User')
         obj.save()
-        ob = Login()
-        ob.username = obj.admin_username
-        ob.password = obj.admin_password
-        ob.u_id = obj.admin_id
-        ob.type = 'co_admin'
-        ob.save()
 
     return render(request, 'coadmin/coadmin.html')
 def view_adminn(request):
@@ -39,4 +33,10 @@ def accept(request,idd):
     obj=Coadmin.objects.get(admin_id=idd)
     obj.admin_status='accepted'
     obj.save()
+    ob = Login()
+    ob.username = obj.admin_username
+    ob.password = obj.admin_password
+    ob.u_id = obj.admin_id
+    ob.type = 'co_admin'
+    ob.save()
     return view_adminn(request)
