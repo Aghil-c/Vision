@@ -15,6 +15,8 @@ class Faculty(models.Model):
    # admin_id = models.IntegerField()
     faculty_phonel = models.CharField(max_length=45)
     faculty_status = models.CharField(max_length=45)
+    faculty_name = models.CharField(max_length=45)
+
 
     class Meta:
         managed = False

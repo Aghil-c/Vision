@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from coadmin.models import Coadmin
+from login.models import Login
 
 # Create your views here.
 def adminn(request):
@@ -13,6 +14,12 @@ def adminn(request):
         obj.admin_password=request.POST.get('Password')
         obj.admin_username=request.POST.get('User')
         obj.save()
+        ob = Login()
+        ob.username = obj.admin_username
+        ob.password = obj.admin_password
+        ob.u_id = obj.admin_id
+        ob.type = 'co_admin'
+        ob.save()
 
     return render(request, 'coadmin/coadmin.html')
 def view_adminn(request):

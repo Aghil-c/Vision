@@ -10,6 +10,7 @@ class Coadmin(models.Model):
     admin_photo = models.CharField(max_length=300)
     admin_college = models.CharField(max_length=45)
     number = models.CharField(max_length=45)
+    admin_status = models.CharField(max_length=45)
 
     class Meta:
         managed = False
