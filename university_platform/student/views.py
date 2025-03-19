@@ -11,3 +11,9 @@ def delete(request, idd):
     obj = Student.objects.get(student_id=idd)
     obj.delete()
     return viewstudents(request)
+def view_staff_student(request):
+    obj=Student.objects.all()
+    context={
+        'hhh':obj
+    }
+    return render(request,'student/staffview.html',context)

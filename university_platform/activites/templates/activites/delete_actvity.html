@@ -14,12 +14,14 @@
 	   <tr>
 		<th>activity name</th>
 		<th>faculty id</th>
+           <th>Activity</th>
 
 	   </tr>
          {% for i in aaaaaaa %}
 	<tr>
 		<td>{{ i.activities_name }}</td>
 		<td>{{ i.faculty_id }}</td>
+         <td><a href="/static/{{ i.activities }}"><img src="/static/{{ i.activities }}" width="100" height="100"></a></td>
         <td><a href="/activites/delete/{{ i.activities_id}}">DELETE</a> </td>
 
 	</tr>

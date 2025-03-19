@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from study_meterial.models import StudyMaterial
+from django.core.files.storage import FileSystemStorage
 import datetime
 # Create your views here.
 def studymeterial(request):
@@ -7,7 +8,11 @@ def studymeterial(request):
         obj=StudyMaterial()
         obj.faculty_id=1
         obj.study_materialdes=request.POST.get('study')
-        obj.study_material=request.POST.get('uploadfile')
+        # obj.study_material=request.POST.get('uploadfile')
+        myfile = request.FILES['uploadfile']
+        fs = FileSystemStorage()
+        filename = fs.save(myfile.name, myfile)
+        obj.study_material = myfile.name
         obj.study_date=datetime.datetime.today()
         obj.study_time=datetime.datetime.now()
         obj.save()

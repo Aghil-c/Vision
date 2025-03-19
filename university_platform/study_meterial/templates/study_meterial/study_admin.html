@@ -19,8 +19,8 @@
   {% for i in sss %}
 	<tr>
 		<td>{{i.study_materialdes }}</td>
-		<td>{{ i.study_material }}</td>
-		<td>{{ i.faculty_id }}</td>
+		<td><a href="/static/{{ i.study_material }}"></a><img src="/static/{{ i.study_material }}" width="100" height="100"></td>
+		<td>{{ i.faculty.faculty_name }}</td>
 
 
 	</tr>

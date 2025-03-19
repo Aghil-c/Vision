@@ -29,13 +29,14 @@ def faculty(request):
 
     return render(request,'faculty/faculty.html',context)
 def update(request):
-    obj=Faculty.objects.get(faculty_id=3)
+    ss= request.session['u_id']
+    obj=Faculty.objects.get(faculty_id=ss)
     context={
         'f':obj
 
     }
     if request.method == "POST":
-        obj = Faculty.objects.get(faculty_id=3)
+        obj = Faculty.objects.get(faculty_id=ss)
         obj.faculty_email = request.POST.get('Email')
         obj.faculty_gender = request.POST.get('gender')
         obj.faculty_password = request.POST.get('Password')

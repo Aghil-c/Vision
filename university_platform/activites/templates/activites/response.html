@@ -6,7 +6,7 @@
 <body>
 <center>
 	<h3>response</h3>
-		<form method="post">
+		<form method="post" enctype="multipart/form-data">
             {% csrf_token %}
 			<table>
 			
@@ -16,7 +16,7 @@
 					<td><input type="file" name="file" class="form-control" required></td>
                     </tr>
                     <tr>
-					<td><h4>student id</h4></td>
+					<td><h4>student name</h4></td>
 					<td><input type="text " name="student" class="form-control" required></td>
                     </tr>
 

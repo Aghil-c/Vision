@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from activites.models import Activities
+from django.core.files.storage import FileSystemStorage
 import datetime
 # Create your views here.
 def activity(request):
@@ -7,7 +8,11 @@ def activity(request):
         obj=Activities()
         obj.faculty_id=1
         obj.student_id=1
-        obj.activities=request.POST.get('activity')
+        # obj.activities=request.POST.get('activity')
+        myfile=request.FILES['activity']
+        fs=FileSystemStorage()
+        filename=fs.save(myfile.name,myfile)
+        obj.activities=myfile.name
         obj.activities_name=request.POST.get('activity_name')
         obj.activity_date=datetime.datetime.today()
         obj.activity_time=datetime.datetime.now()
