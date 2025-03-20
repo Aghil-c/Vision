@@ -5,9 +5,10 @@ import datetime
 
 # Create your views here.
 def notification(request):
+    ss=request.session['u_id']
     if request.method=='POST':
         obj=Notification()
-        obj.admin_id=1
+        obj.admin_id=ss
         obj.notification=request.POST.get('notification')
         obj.notification_date=datetime.datetime.today()
         obj.notification_time=datetime.datetime.now()
@@ -15,7 +16,8 @@ def notification(request):
     return render(request,'notification/notification.html')
 
 def viewnotification(request):
-    obj=Notification.objects.all()
+    ss=request.session['u_id']
+    obj=Notification.objects.filter(admin__faculty__faculty_id=ss)
     context={
         'n': obj
 

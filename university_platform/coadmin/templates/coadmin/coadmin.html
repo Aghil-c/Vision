@@ -191,7 +191,7 @@ body {
         </div>
         <div class="signup-section">
             <h2 class="title">Sign Up</h2>
-            <form method="post">
+            <form method="post" enctype="multipart/form-data">
                  {% csrf_token %}
                 <div class="input-group">
                     <label for="username">College Name</label>

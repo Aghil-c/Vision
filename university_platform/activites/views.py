@@ -45,7 +45,8 @@ def viewaddactivity(request):
     return render(request,'activites/viewadd_activity.html',context)
 
 def delete_actvity(request):
-    obj=Activities.objects.all()
+    ss=request.session['u_id']
+    obj=Activities.objects.filter(faculty_id=ss)
     context={
         'aaaaaaa':obj
     }

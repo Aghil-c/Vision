@@ -5,14 +5,22 @@
 <html>
 <head>
 	<title>activity</title>
+  <style>
 
+        h2,th,td{
+            color: black;
+        }
+        body{
+            background-color: #eeeeee;
+        }
+    </style>
 </head>
 <body>
 <center><h3>Activity</h3>
 
 		<form method="post" enctype="multipart/form-data">
             {% csrf_token %}
-			<table>
+			<table bgcolor="#f0ffff">
 				<tr>
 					<td>Activity name</td>
 					<td><input type="text" name="activity_name" class="form-control" required ></td>

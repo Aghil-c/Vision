@@ -5,11 +5,17 @@
 <html>
 <head>
 	<title>faculty</title>
+    <style>
+
+        h2,th,td{
+            color: black;
+        }
+    </style>
 </head>
 <body>
 	<center>
 		<h2>Faculty</h2>
-        <table border="2">
+        <table border="2" bgcolor="#f0f8ff">
         <tr>
         	<th>faculty name</th>
         	<th>E mail</th>
@@ -24,15 +30,16 @@
         </tr>
         {% for i in ff %}
         <tr>
-        	<td>{{ i.faculty_id }}</td>
+        	<td>{{ i.faculty_name }}</td>
         	<td>{{ i.faculty_email }}</td>
         <td>{{ i.faculty_gender }}</td>
-        <td>{{ i.faculty_photo }}</td>
+{#        <td>{{ i.faculty_photo }}</td>#}
+            <td><a href="/static/{{ i.faculty_photo }}"><img src="/static/{{ i.faculty_photo }}" width="100" height="100"></a></td>
         <td>{{ i.faculty_username }}</td>
         <td>{{ i.faculty_password }}</td>
         <td>{{ i.faculty_phonel }}</td>
             <td>{{ i.faculty_status }}</td>
-            <td>{{ i.admin_id }}</td>
+            <td>{{ i.admin.admin_username }}</td>
 
             <td><a href="/faculty/accept/{{ i.faculty_id }}">ACCEPT</a> </td>
             <td><a href="/faculty/delete/{{ i.faculty_id }}">DELETE</a> </td>

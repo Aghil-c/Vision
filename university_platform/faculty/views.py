@@ -2,6 +2,7 @@ from django.shortcuts import render
 from faculty.models import Faculty
 from coadmin.models import Coadmin
 from login.models import Login
+from django.core.files.storage import FileSystemStorage
 # Create your views here.
 def faculty(request):
     obj = Coadmin.objects.all()
@@ -14,7 +15,11 @@ def faculty(request):
         obj.faculty_email=request.POST.get('Email')
         obj.faculty_gender=request.POST.get('gender')
         obj.faculty_password=request.POST.get('Password')
-        obj.faculty_photo=request.POST.get('Photo')
+        # obj.faculty_photo=request.POST.get('Photo')
+        myfile = request.FILES['Photo']
+        fs = FileSystemStorage()
+        filename = fs.save(myfile.name, myfile)
+        obj.faculty_photo = myfile.name
         obj.faculty_username=request.POST.get('User')
         obj.faculty_name=request.POST.get('Name')
         obj.faculty_phonel=request.POST.get('number')
@@ -41,6 +46,7 @@ def update(request):
         obj.faculty_gender = request.POST.get('gender')
         obj.faculty_password = request.POST.get('Password')
         obj.faculty_photo = request.POST.get('Photo')
+
         obj.faculty_username = request.POST.get('User')
         obj.faculty_name = request.POST.get('Name')
         obj.faculty_phonel = request.POST.get('number')
@@ -49,7 +55,8 @@ def update(request):
 
     return render(request,'faculty/update.html',context)
 def viewfaculty(request):
-    obj = Faculty.objects.all()
+    ss = request.session['u_id']
+    obj = Faculty.objects.filter(admin_id=ss)
     context = {
         'ff': obj
 
@@ -59,6 +66,8 @@ def viewfaculty(request):
 def delete(request, idd):
     obj = Faculty.objects.get(faculty_id=idd)
     obj.delete()
+    ob=Login.objects.filter(u_id=idd,type="faculty")
+    ob.delete()
     return viewfaculty(request)
 
 def accept(request,idd):

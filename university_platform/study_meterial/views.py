@@ -19,7 +19,8 @@ def studymeterial(request):
     return render(request,'study_meterial/studymeterial.html')
 
 def viewstdymet(request):
-    obj=StudyMaterial.objects.all()
+    ss=request.session['u_id']
+    obj=StudyMaterial.objects.filter(faculty_id=ss)
     context={
         'ss':obj
     }
