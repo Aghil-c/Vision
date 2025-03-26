@@ -2,11 +2,13 @@ from django.shortcuts import render
 from activites.models import Activities
 from django.core.files.storage import FileSystemStorage
 import datetime
+from faculty.models import Faculty
 # Create your views here.
 def activity(request):
+    ss = request.session['u_id']
     if request.method=="POST":
         obj=Activities()
-        obj.faculty_id=1
+        obj.faculty_id=ss
         obj.student_id=1
         # obj.activities=request.POST.get('activity')
         myfile=request.FILES['activity']
@@ -59,7 +61,8 @@ def delete(request,idd):
     return delete_actvity (request)
 
 def admin_viewactivity(request):
-    obj=Activities.objects.all()
+    ss = request.session['u_id']
+    obj=Activities.objects.filter(faculty__admin_id=ss)
     context={
         'aaaaaaaa':obj
     }

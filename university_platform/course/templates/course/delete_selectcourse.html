@@ -1,4 +1,4 @@
-{% extends 'temp/admin_base.html' %}
+{% extends 'temp/coadmin_base.html' %}
 {% block base %}
 
 <!DOCTYPE html>
@@ -24,11 +24,11 @@
 		<th>course</th>
 		<th>duration</th>
 	</tr>
-   {% for i in cc %}
+   {% for i in ccc %}
 	<tr>
-		<td>{{ i.course }}</td>
-		<td>{{ i.course_duration }}</td>
-     <td><a href="/course/delete/{{ i.course_id}}">DELETE</a> </td>
+		<td>{{ i.course.course }}</td>
+		<td>{{ i.course.course_duration }}</td>
+     <td><a href="/course/aaaaaa/{{ i.select_course_id}}">DELETE</a> </td>
 	</tr>
     {% endfor %}
 

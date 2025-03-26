@@ -4,9 +4,10 @@ from django.core.files.storage import FileSystemStorage
 import datetime
 # Create your views here.
 def studymeterial(request):
+    ss = request.session['u_id']
     if request.method == "POST":
         obj=StudyMaterial()
-        obj.faculty_id=1
+        obj.faculty_id=ss
         obj.study_materialdes=request.POST.get('study')
         # obj.study_material=request.POST.get('uploadfile')
         myfile = request.FILES['uploadfile']
@@ -35,8 +36,10 @@ def delete(request, idd):
     obj = StudyMaterial.objects.get(study_id=idd)
     obj.delete()
     return viewstdymet (request)
+
 def view_admin_study(request):
-    obj=StudyMaterial.objects.all()
+    ss = request.session['u_id']
+    obj=StudyMaterial.objects.filter(faculty__admin_id=ss)
     context={
         'sss':obj
     }

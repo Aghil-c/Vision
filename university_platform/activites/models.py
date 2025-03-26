@@ -14,6 +14,7 @@ class Activities(models.Model):
     activity_date = models.CharField(max_length=45, blank=True, null=True)
     activity_time = models.CharField(max_length=45, blank=True, null=True)
     activity_response = models.CharField(max_length=45, blank=True, null=True)
+    activity_status = models.CharField(max_length=45)
 
     class Meta:
         managed = False
